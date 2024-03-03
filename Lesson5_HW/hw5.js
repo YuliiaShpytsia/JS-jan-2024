@@ -1,64 +1,47 @@
 // - створити функцію яка обчислює та повертає площу прямокутника зі сторонами а і б
-// function square(a, b) {
-//     console.log(a * b);
-//     return (a * b);
-// }
-// square(10, 12)
+// let square = (a, b) => a * b
+// console.log(square(10, 12))
 
 // - створити функцію яка обчислює та повертає площу кола з радіусом r
-// function area(pi, r) {
-//     console.log(pi * r * r);
-//     return (pi * r ** 2);
-// }
+// let area = (pi, r) => pi * r ** 2
 // const pi = 3.14;
-// area(pi, 7)
+// console.log(area(pi, 7))
 
 // - створити функцію яка обчислює та повертає площу циліндру висотою h, та радіутом r
-// function area (pi, r, h) {
-//     console.log(2 * pi * r * (h + r));
-//     return (2 * pi * r * (h + r));
-// }
+// let area = (pi, r, h) => 2 * pi * r * (h + r);
 // const pi = 3.14;
-// area (pi, 6, 13);
+// console.log(area (pi, 6, 13));
 
 // - створити функцію яка приймає масив та виводить кожен його елемент
 // let names = ['masha', 'dasha', 'vasya', 'kolya', 'anna', 'olya', 'ksenya', 'pavel', 'ihor', 'ivan'];
-// function user(name) {
+// const user = names => {
 //     for (let name of names) {
 //         console.log(name)
 //     }
 // }
-// user(name)
+// user(names)
 
 // - створити функцію яка створює параграф з текстом. Текст задати через аргумент
-// function textString (text) {
-//     document.write(`<p>${text}</p>`)
-// }
+// const textString = (text) => document.write(`<p>${text}</p>`)
 // textString('You are a wizard, Harry!')
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий
-// function textString (text) {
-//     document.write(`<ul>
-//     <li>${text}</li>
-//     <li>${text}</li>
-//     <li>${text}</li>
-// </ul>`)
-// }
+// let textString = (text) => document.write(`<ul><li>${text}</li><li>${text}</li><li>${text}</li></ul>`)
 // textString('You are a wizard, Harry!')
 
 // - створити функцію яка створює ul з трьома елементами li. Текст li задати через аргумент всім однаковий. Кількість li визначається другим аргументом, який є числовим (тут використовувати цикл)
-// function textString (text, num) {
+// const textString = (text, num) => {
 //     document.write(`<ul>`)
 //     for (let i = 0; i < num; i++) {
 //         document.write(`<li>${text} </li>`)
 //     }
 //     document.write(`</ul>`)
 // }
-// textString('Drakaris!', 5)
+// textString('Drakaris!', 3)
 
 // - створити функцію яка приймає масив примітивних елементів (числа,стрінги,булеві), та будує для них список
 // let words = ['sam', 'dean', 'baby', 16, 32, true, false];
-// function list (words) {
+// const list = (words) => {
 //     document.write(`<ul>`)
 //     for (let word of words) {
 //         document.write(`<li>${word} </li>`)
@@ -77,22 +60,16 @@
 //     {id: 6, name: 'Gabriel', age: 2003},
 //     {id: 7, name: 'Death', age: 6000},
 // ];
-// function listOfUsers(array) {
+// const listOfUsers = (array) => {
 //     for (let user of array) {
-//         document.write(`
-//          <div>
-//              Id - ${user.id},
-//              Name - ${user.name} ,
-//              Age - ${user.age}
-//          </div>
-//         `);
+//         document.write(`<div>Id - ${user.id}, Name - ${user.name}, Age - ${user.age}</div>`);
 //     }
 // }
 // listOfUsers(users);
 
 // - створити функцію яка повертає найменьше число з масиву
 // let numbers = [10, 12, -13, 666, 22, -7]
-// function minimal(numbers) {
+// const minimal = (numbers) => {
 //     let min = 0;
 //     for (let item of numbers) {
 //         if (item < min) {
@@ -105,22 +82,22 @@
 // minimal(numbers)
 
 // - створити функцію sum(arr)яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад sum([1,2,10]) //->
-let arr = [10, 12, 13, 63, 22, 7];
-function sum (arr) {
-    let count = 0;
-    for (const arrElement of arr) {
-
-        count  = count + arrElement;
-    }
-    console.log(count);
-    return(count);
-}
-sum(arr)
+// let arr = [10, 12, 13, 63, 22, 7];
+// const sum = (arr) => {
+//     let count = 0;
+//     for (const arrElement of arr) {
+//
+//         count  = count + arrElement;
+//     }
+//     console.log(count);
+//     return(count);
+// }
+// sum(arr);
 
 // - створити функцію swap(arr,index1,index2). Функція міняє місцями заняення у відаовідних індексах
 // Приклад  swap([11,22,33,44],0,1) //=> [22,11,33,44]
 // let arr = [10, 12, -13, 666, 22, -7]
-// function swap(arr, index1, index2) {
+// const swap = (arr, index1, index2) => {
 //     [arr[index1], arr[index2]] = [arr[index2], arr[index1]];
 //     return arr;
 // }
@@ -134,7 +111,7 @@ sum(arr)
 //     {currency:'ZL',value:9},
 //     {currency:'GB',value:47},
 // ]
-// function exchange (sumUAN, arr, money) {
+// const exchange = (sumUAN, arr, money) => {
 //     for (let arrElement of arr) {
 //         if (arrElement.currency === money) {
 //             console.log(sumUAN * arrElement.value);
