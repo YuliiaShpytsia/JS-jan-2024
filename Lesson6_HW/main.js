@@ -81,6 +81,7 @@
 //      return (sibling.monthDuration - first.monthDuration);
 // })
 // console.log(sort)
+//
 // let filter = coursesAndDurationArray.filter((item) => item.monthDuration > 5);
 // console.log(filter);
 //
@@ -132,8 +133,8 @@
 //     {cardSuit: 'clubs', value: 'ace', color: 'black'}
 // ]
 // - знайти піковий туз
-// let ace = cards.filter (card => card.cardSuit === 'spade' && card.value === 'ace')
-// console.log(ace)
+let ace = cards.find (card => card.cardSuit === 'spade' && card.value === 'ace')
+console.log(ace)
 
 // - всі шістки
 // let six = cards.filter(card => card.value === '6');
