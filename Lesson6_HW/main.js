@@ -133,8 +133,8 @@
 //     {cardSuit: 'clubs', value: 'ace', color: 'black'}
 // ]
 // - знайти піковий туз
-let ace = cards.find (card => card.cardSuit === 'spade' && card.value === 'ace')
-console.log(ace)
+// let ace = cards.find (card => card.cardSuit === 'spade' && card.value === 'ace')
+// console.log(ace)
 
 // - всі шістки
 // let six = cards.filter(card => card.value === '6');
