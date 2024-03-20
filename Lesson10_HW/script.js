@@ -9,7 +9,7 @@
 //     let surname = document.createElement('h3');
 //     let age = document.createElement('h3');
 //
-//     name.innerText = `Name: ${this.name.value}`
+//     name.innerText = `Name: ${this.username.value}`
 //     surname.innerText = `Surname: ${this.surname.value}`
 //     age.innerText = `Age: ${this.age.value}`
 //
@@ -110,48 +110,47 @@
 //// *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
-// let inp1 = document.getElementById('str');
-// let inp2 = document.getElementById('cols');
-// let inp3 = document.getElementById('text');
-// let button = document.getElementById('work');
-//
-// button.onclick = function (e) {
-//     e.preventDefault();
-//     let table = document.createElement('table')
-//     table.classList.add('class')
-//     document.body.appendChild(table)
-//     for (let i = 0; i <= inp1.value; i++) {
-//         let row = document.createElement('tr');
-//         row.classList.add('class')
-//         table.appendChild(row);
-//         for (let i = 0; i <= inp2.value; i++) {
-//             let column = document.createElement('td')
-//             column.classList.add('class')
-//             row.appendChild(column);
-//             column.innerText = inp3.value;
-//         }
-//     }
-// };
+let inp1 = document.getElementById('str');
+let inp2 = document.getElementById('cols');
+let inp3 = document.getElementById('text');
+let button = document.getElementById('work');
+
+button.onclick = function (e) {
+    let table = document.createElement('table')
+    table.classList.add('class')
+    document.body.appendChild(table)
+    for (let i = 0; i <= inp1.value; i++) {
+        let row = document.createElement('tr');
+        row.classList.add('class')
+        table.appendChild(row);
+        for (let i = 0; i <= inp2.value; i++) {
+            let column = document.createElement('td')
+            column.classList.add('class')
+            row.appendChild(column);
+            column.innerText = inp3.value;
+        }
+    }
+};
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині якого є значення "100грн"
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
 //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
-window.addEventListener('load', () => {
-    let localData = localStorage.getItem('counter');
-    if (!localData) {
-        localData = {
-            count: 100,
-            date: new Date().getTime()
-        }
-    }else{
-        localData = JSON.parse(localData)
-    }
-    const now = new Date().getTime()
-    if (now - localData.date > 10 * 1000) {
-        localData.count = localData.count + 10;
-    }
-    localData.date = now;
-
-    document.getElementById('counter').innerText = localData.count + "Гривень"
-    localStorage.setItem('counter', JSON.stringify(localData));
-});
+// window.addEventListener('load', () => {
+//     let localData = localStorage.getItem('counter');
+//     if (!localData) {
+//         localData = {
+//             count: 100,
+//             date: new Date().getTime()
+//         }
+//     }else{
+//         localData = JSON.parse(localData)
+//     }
+//     const now = new Date().getTime()
+//     if (now - localData.date > 10 * 1000) {
+//         localData.count = localData.count + 10;
+//     }
+//     localData.date = now;
+//
+//     document.getElementById('counter').innerText = localData.count + "Гривень"
+//     localStorage.setItem('counter', JSON.stringify(localData));
+// });
