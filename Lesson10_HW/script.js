@@ -119,11 +119,11 @@ button.onclick = function (e) {
     let table = document.createElement('table')
     table.classList.add('class')
     document.body.appendChild(table)
-    for (let i = 0; i <= inp1.value; i++) {
+    for (let i = -1; i <= inp1.value; i++) {
         let row = document.createElement('tr');
         row.classList.add('class')
         table.appendChild(row);
-        for (let i = 0; i <= inp2.value; i++) {
+        for (let i = -1; i <= inp2.value; i++) {
             let column = document.createElement('td')
             column.classList.add('class')
             row.appendChild(column);
