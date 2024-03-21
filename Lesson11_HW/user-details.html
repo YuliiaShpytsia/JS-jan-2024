@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let userId = new URL(location.href).searchParams.get('id');
+    let baseURL = `https://jsonplaceholder.typicode.com/users/${userId}`;
+    fetch(baseURL)
+        .then(response => response.json())
+        .then((user) => {
+                let h4 = document.createElement('h2');
+                h4.innerText = user.id +'.' + ' ' + user.name;
+                let p1 = document.createElement('p');
+                p1.innerText = `Username: ${user.username}, email: ${user.email}`
+                let adr = document.createElement('p');
+                adr.innerText = `Address: ${user.address.zipcode}, ${user.address.city}, ${user.address.street} ${user.address.suite};
+                Geo: ${user.address.geo.lat}, ${user.address.geo.lng}.`;
+                let cont = document.createElement('p');
+                cont.innerText = `Phone: ${user.phone}; Website: ${user.website}`;
+                let p2 = document.createElement('p');
+                p2.innerText = `Company: ${user.company.name}, ${user.company.catchPhrase}, ${user.company.bs}`;
+            
+                document.body.append(h4, p1, adr, cont, p2);
+        })
+</script>
+</body>
+</html>
